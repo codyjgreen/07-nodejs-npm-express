@@ -73,8 +73,8 @@ articleView.setTeasers = () => {
   });
 };
 
-// COMMENT: When/where is this function invoked? What event ultimately triggers its execution? Explain the sequence of code execution when this function is invoked.
-// PUT YOUR RESPONSE HERE
+// COMMENTED: When/where is this function invoked? What event ultimately triggers its execution? Explain the sequence of code execution when this function is invoked.
+// it is invoked in the new.html page. its called on the bottom because that is the first place its safe to do so.
 articleView.initNewArticlePage = () => {
   $('.tab-content').show();
   $('#export-field').hide();
@@ -86,8 +86,8 @@ articleView.initNewArticlePage = () => {
   $('#new-form').on('submit', articleView.submit);
 };
 
-// COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// COMMENTED: When is this function called? What event ultimately triggers its execution?
+// its called in the init new article function and it is triggered when something happens in the form element 
 articleView.create = () => {
   let article;
   $('#articles').empty();
@@ -111,8 +111,8 @@ articleView.create = () => {
   $('#article-json').val(`${JSON.stringify(article)},`);
 };
 
-// COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// COMMENTED: When is this function called? What event ultimately triggers its execution?
+// its called in the init.new.article function when the form is filled out and the submit button is clicked.
 articleView.submit = event => {
   event.preventDefault();
   let article = new Article({
@@ -125,7 +125,8 @@ articleView.submit = event => {
   });
 
   // COMMENT: Where is this function defined? When is this function called? What event ultimately triggers its execution?
-  // PUT YOUR RESPONSE HERE
+  // it is defined in article.js in the article.prototype it is called when you submit from the articleView.submit function.
+  
   article.insertRecord();
 }
 
