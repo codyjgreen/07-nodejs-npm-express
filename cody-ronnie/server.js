@@ -9,6 +9,8 @@ const bodyParser = require('body-parser').urlencoded({extended: true});
 const PORT = process.env.PORT || 3000;
 app.use(express.static('./public'))
 
+// The files are in a public directory because we're giving the public access to it. Express JS is using these files direct the user to the file being searched for in the public directory. This express file only looks in the public directory.
+
 app.post('/articles', bodyParser, function(request, response) {
   // REVIEW: This route will receive a new article from the form page, new.html, and log that form data to the console. We will wire this up soon to actually write a record to our persistence layer!
   
